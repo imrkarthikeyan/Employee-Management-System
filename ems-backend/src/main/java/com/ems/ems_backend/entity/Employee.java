@@ -1,19 +1,12 @@
 package com.ems.ems_backend.entity;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-
-
-@AllArgsConstructor
-@NoArgsConstructor
 
 @Entity
 @Table(name = "employees")
@@ -26,14 +19,18 @@ public class Employee {
     private String firstName;
     @Column(name = "last_name")
     private String lastName;
+    @JsonProperty("email")
     @Column(name = "email", nullable = false, unique = true)
     private String email;
 
-    public Employee(long id, String firstName, String lastName, String department) {
+    public Employee(long id, String firstName, String lastName, String email) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
+    }
+
+    public Employee() {
     }
 
     public long getId() {

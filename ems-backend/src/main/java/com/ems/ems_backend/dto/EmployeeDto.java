@@ -1,26 +1,19 @@
 package com.ems.ems_backend.dto;
 
-
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-
-
-@AllArgsConstructor
-@NoArgsConstructor
-
 public class EmployeeDto {
     private long id;
     private String firstName;
     private String lastName;
     private String email;
 
-    public EmployeeDto(long id, String firstName, String lastName, String department) {
+    public EmployeeDto(long id, String firstName, String lastName, String email) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
+    }
+
+    public EmployeeDto() {
     }
 
     public long getId() {
